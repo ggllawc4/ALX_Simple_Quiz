@@ -6,9 +6,13 @@ function checkAnswer() {
     const userAnswer = document.querySelector('input[name="quiz"]:checked');
     
         
-    if (userAnswer && userAnswer.value === correctAnswer) {
+    if (userAnswer === correctAnswer) {
+        document.getElementById("feedback").textContent = "Correct! Well done.";
+    } else if (userAnswer && userAnswer.value === correctAnswer) {
+        
         document.getElementById("feedback").textContent = "Correct! Well done.";
     } else if (userAnswer) {
+        
         document.getElementById("feedback").textContent = "That's incorrect. Try again!";
     }
 }
